@@ -1,6 +1,7 @@
 # devops-netology
 new line
 one more line
+another line
 
 terraform/.gitignore
 
