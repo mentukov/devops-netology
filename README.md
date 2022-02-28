@@ -1,6 +1,11 @@
 # devops-netology
 new line
 
+push fix
+
+
+
+
 terraform/.gitignore
 локальная директория терраформ и все вложенное в нее.
 
