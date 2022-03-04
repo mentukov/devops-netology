@@ -6,6 +6,11 @@ new line
 one more line
 another line
 
+push fix
+
+
+
+
 terraform/.gitignore
 
 **/.terraform/* -игнорирование данного скрытого каталога со всеми его вложениями в любом месте репозитория
