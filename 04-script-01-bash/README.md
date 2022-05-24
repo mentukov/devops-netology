@@ -62,10 +62,8 @@ do
                 curl -m 10 http://${array_ip[$j]}
                 if (($? == 0))
                 then
-                        date >> ipstat.log
                         echo ${array_ip[$j]} UP 80 >> 80.log
                 else
-                        date >> ipstat.log
                         echo ${array_ip[$j]} DOWN 80 >> 80.log
                 fi
         done
@@ -78,7 +76,24 @@ done
 
 ### Ваш скрипт:
 ```bash
-???
+#!/usr/bin/env bash
+array_ip=(192.168.0.1 173.194.222.113 87.250.250.242)
+while ((1==1))
+do
+        for j in ${!array_ip[@]}
+        do
+                curl -m 10 http://${array_ip[$j]}
+                if (($? == 0))
+                then
+                        echo ${array_ip[$j]} UP 80 >> 80.log
+                else
+                        echo ${array_ip[$j]} DOWN 80 >> error.log
+                        keep_checking=0
+
+                fi
+        done
+        sleep 1
+done
 ```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
