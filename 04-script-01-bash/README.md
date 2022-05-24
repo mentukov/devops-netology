@@ -55,16 +55,16 @@ done
 array_count=(0 1 2 3 4)
 array_ip=(192.168.0.1 173.194.222.113 87.250.250.242)
 
-for i in ${array_count[@]}
+for n in ${array_count[@]}
 do
-        for j in ${!array_ip[@]}
+        for i in ${!array_ip[@]}
         do
-                curl -m 10 http://${array_ip[$j]}
+                curl -m 10 http://${array_ip[$i]}
                 if (($? == 0))
                 then
-                        echo ${array_ip[$j]} UP 80 >> 80.log
+                        echo ${array_ip[$i]} UP 80 >> 80.log
                 else
-                        echo ${array_ip[$j]} DOWN 80 >> 80.log
+                        echo ${array_ip[$i]} DOWN 80 >> 80.log
                 fi
         done
         sleep 1
@@ -80,14 +80,14 @@ done
 array_ip=(192.168.0.1 173.194.222.113 87.250.250.242)
 while ((1==1))
 do
-        for j in ${!array_ip[@]}
+        for i in ${!array_ip[@]}
         do
-                curl -m 10 http://${array_ip[$j]}
+                curl -m 10 http://${array_ip[$i]}
                 if (($? == 0))
                 then
-                        echo ${array_ip[$j]} UP 80 >> 80.log
+                        echo ${array_ip[$i]} UP 80 >> 80.log
                 else
-                        echo ${array_ip[$j]} DOWN 80 >> error.log
+                        echo ${array_ip[$i]} DOWN 80 >> error.log
                         keep_checking=0
 
                 fi
