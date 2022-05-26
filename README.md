@@ -1,5 +1,15 @@
 # devops-netology
+
+Added line from IDE Py Charm 
+
 new line
+one more line
+another line
+
+push fix
+
+
+
 
 terraform/.gitignore
 
