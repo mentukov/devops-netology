@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-02 1">
+    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-02 3">
+      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/*4/.vagrant/rgloader/loader.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/*4/Vagrantfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/*4/ansible.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/ansible/inventory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/ansible/provision.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" afterDir="false" />
     </list>
@@ -26,10 +31,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/ansible" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -138,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656408585317</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="05-virt-02 3">
+      <created>1656410082697</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1656410082697</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +171,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="trash" />
     <MESSAGE value="04-script-02-py" />
     <MESSAGE value="04-script-02-py hw" />
@@ -160,6 +179,7 @@
     <MESSAGE value="05-virt-01 -done" />
     <MESSAGE value="05-virt-01 -done vi" />
     <MESSAGE value="05-virt-02 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="05-virt-02 1" />
+    <MESSAGE value="05-virt-02 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-virt-02 3" />
   </component>
 </project>
