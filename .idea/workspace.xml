@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-01">
+    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-01 -done vi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virt-homeworks/05-virt-01-basics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-01-basics/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,35 @@
       <option name="project" value="LOCAL" />
       <updated>1656403302589</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="05-virt-01 -done">
+      <created>1656404629449</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656404629449</updated>
+    </task>
+    <task id="LOCAL-00007" summary="05-virt-01 -done">
+      <created>1656404691504</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656404691504</updated>
+    </task>
+    <task id="LOCAL-00008" summary="05-virt-01 -done vi">
+      <created>1656404786070</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656404786070</updated>
+    </task>
+    <task id="LOCAL-00009" summary="05-virt-01 -done vi">
+      <created>1656404813870</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656404813870</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +121,8 @@
     <MESSAGE value="04-script-02-py" />
     <MESSAGE value="04-script-02-py hw" />
     <MESSAGE value="05-virt-01" />
-    <option name="LAST_COMMIT_MESSAGE" value="05-virt-01" />
+    <MESSAGE value="05-virt-01 -done" />
+    <MESSAGE value="05-virt-01 -done vi" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-virt-01 -done vi" />
   </component>
 </project>
