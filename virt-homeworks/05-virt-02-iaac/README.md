@@ -21,6 +21,16 @@
 - Чем Ansible выгодно отличается от других систем управление конфигурациями?
 - Какой, на ваш взгляд, метод работы систем конфигурации более надёжный push или pull?
 
+### Ответ:
+
+Отличия Ansible от других систем:
+* Легкость в изучении -Ansible задачи запускаются последовательно, что сильно облегчает траблшутинг конфигураций.
+* Не нужно ставить клиента (агента) на машины.
+* YAML плейбуки -плейбуки в Ансибл невероятно просты и читаемы.
+* Портал Ansible Galaxy.
+
+Вроде как на этапе этого изучения кажется что PUSH, но думаю все очень зависит от обстоятельств.
+
 ## Задача 3
 
 Установить на личный компьютер:
@@ -30,6 +40,31 @@
 - Ansible
 
 *Приложить вывод команд установленных версий каждой из программ, оформленный в markdown.*
+
+### Ответ:
+
+```shell
+➜  virt-homeworks git:(main) ✗ vboxmanage -V
+6.0.14r133895
+```
+
+```shell
+➜  05-virt-02-iaac git:(main) ✗ vagrant --version 
+Vagrant 2.2.19
+```
+
+```shell
+➜  05-virt-02-iaac git:(main) ✗ ansible --version
+ansible [core 2.13.1]
+  config file = None
+  configured module search path = ['/Users/***/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/Cellar/ansible/6.0.0/libexec/lib/python3.10/site-packages/ansible
+  ansible collection location = /Users/***/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible
+  python version = 3.10.5 (main, Jun 23 2022, 17:18:49) [Clang 12.0.0 (clang-1200.0.32.29)]
+  jinja version = 3.1.2
+  libyaml = True
+```
 
 ## Задача 4 (*)
 

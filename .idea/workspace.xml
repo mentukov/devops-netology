@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-01 -done vi">
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" afterDir="false" />
+    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-02 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656407674500</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="05-virt-02 1">
+      <created>1656408585317</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1656408585317</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +159,7 @@
     <MESSAGE value="05-virt-01" />
     <MESSAGE value="05-virt-01 -done" />
     <MESSAGE value="05-virt-01 -done vi" />
-    <option name="LAST_COMMIT_MESSAGE" value="05-virt-01 -done vi" />
+    <MESSAGE value="05-virt-02 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-virt-02 1" />
   </component>
 </project>
