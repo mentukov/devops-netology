@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-02 3">
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/*4/.vagrant/rgloader/loader.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/*4/Vagrantfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/*4/ansible.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/ansible/inventory" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/ansible/provision.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-02-iaac/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="05-virt-02 4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +148,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656410082697</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="05-virt-02 3">
+      <created>1656411633890</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1656411633890</updated>
+    </task>
+    <task id="LOCAL-00017" summary="05-virt-02 4">
+      <created>1656411730727</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1656411730727</updated>
+    </task>
+    <task id="LOCAL-00018" summary="05-virt-02 4">
+      <created>1656411741841</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1656411741841</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +193,7 @@
     <MESSAGE value="05-virt-01 -done vi" />
     <MESSAGE value="05-virt-02 1" />
     <MESSAGE value="05-virt-02 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="05-virt-02 3" />
+    <MESSAGE value="05-virt-02 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-virt-02 4" />
   </component>
 </project>
