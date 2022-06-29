@@ -183,8 +183,10 @@ drwxr-xr-x  4 mentukov  staff  128 29 июн 13:55 .
 drwxr-xr-x  5 mentukov  staff  160 29 июн 13:45 ..
 -rw-r--r--  1 mentukov  staff    0 29 июн 13:54 centos-test
 -rw-r--r--  1 mentukov  staff    0 29 июн 13:55 debian-test
-## Задача 4 (*)
 ```
+
+## Задача 4 (*)
+
 
 Воспроизвести практическую часть лекции самостоятельно.
 
