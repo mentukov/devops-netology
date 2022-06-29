@@ -136,7 +136,55 @@ Gitlab сервер для реализации CI/CD процессов и пр
 - Добавьте еще один файл в папку ```/data``` на хостовой машине;
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
+### Ответ
+
+```shell
+➜  05-virt-03-docker git:(main) ✗ mkdir data  
+
+➜  05-virt-03-docker git:(main) ✗ sudo docker pull centos
+Using default tag: latest
+latest: Pulling from library/centos
+a1d0c7532777: Pull complete 
+Digest: sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177
+Status: Downloaded newer image for centos:latest
+docker.io/library/centos:latest
+
+➜  05-virt-03-docker git:(main) ✗ sudo docker run -it --rm -d --name centos -v $(pwd)/data:/data centos 
+
+➜  05-virt-03-docker git:(main) ✗ sudo docker pull debian
+Using default tag: latest
+latest: Pulling from library/debian
+1339eaac5b67: Pull complete 
+Digest: sha256:859ea45db307402ee024b153c7a63ad4888eb4751921abbef68679fc73c4c739
+Status: Downloaded newer image for debian:latest
+docker.io/library/debian:latest
+
+➜  05-virt-03-docker git:(main) ✗ sudo docker run -it --rm -d --name debian -v $(pwd)/data:/data debian
+
+➜  05-virt-03-docker git:(main) ✗ docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED              STATUS              PORTS     NAMES
+78bda44b8cdc   debian    "bash"        12 seconds ago       Up 12 seconds                 debian
+aecc697fa71f   centos    "/bin/bash"   About a minute ago   Up About a minute             centos
+
+➜  05-virt-03-docker git:(main) ✗ sudo docker exec -it centos bash
+[root@aecc697fa71f /]# cd /data
+[root@aecc697fa71f data]# touch centos-test
+[root@aecc697fa71f data]# ls
+centos-test
+
+➜  05-virt-03-docker git:(main) ✗ sudo docker exec -it debian bash
+root@78bda44b8cdc:/# touch /data/debian-test
+root@78bda44b8cdc:/# ls /data/
+centos-test  debian-test
+
+➜  05-virt-03-docker git:(main) ✗ ls -la data
+total 0
+drwxr-xr-x  4 mentukov  staff  128 29 июн 13:55 .
+drwxr-xr-x  5 mentukov  staff  160 29 июн 13:45 ..
+-rw-r--r--  1 mentukov  staff    0 29 июн 13:54 centos-test
+-rw-r--r--  1 mentukov  staff    0 29 июн 13:55 debian-test
 ## Задача 4 (*)
+```
 
 Воспроизвести практическую часть лекции самостоятельно.
 
