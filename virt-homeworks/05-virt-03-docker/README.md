@@ -49,7 +49,7 @@ Password:
 REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
 mentukov/netology-nginx   v0.0.1    62e5b6026ceb   58 seconds ago   142MB
 ➜  docker git:(main) ✗ sudo docker run --rm -d --name test-nginx -p 8080:80 mentukov/netology-nginx:v0.0.1
-20752de271c30ccaad8efc016cc77f0ff650dd7bf3452a39ab0dc32aa026850e
+**********************************************
 ➜  docker git:(main) ✗ docker ps -a
 CONTAINER ID   IMAGE                            COMMAND                  CREATED              STATUS              PORTS                  NAMES
 20752de271c3   mentukov/netology-nginx:v0.0.1   "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:8080->80/tcp   test-nginx
@@ -63,7 +63,7 @@ e7344f8a29a3: Mounted from library/nginx
 b2f82de68e0d: Mounted from library/nginx 
 d5b40e80384b: Mounted from library/nginx 
 08249ce7456a: Mounted from library/nginx 
-v0.0.1: digest: sha256:8ff4b673910256b960546c8cbb38505da8be58c5804e4c70d1e283c4b2cf9fe7 size: 1777
+v0.0.1: digest: sha256:****************************** size: 1777
 ```
 
 ## Задача 2

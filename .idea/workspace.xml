@@ -4,8 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="dockerfile">
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-03-docker/README.md" afterDir="false" />
+    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="docker 1 task">
+      <change beforePath="$PROJECT_DIR$/virt-homeworks/05-virt-03-docker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-03-docker/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656495764920</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="docker 1 task">
+      <created>1656496248976</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656496248976</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +244,7 @@
     <MESSAGE value="05-virt-02 4" />
     <MESSAGE value="readme" />
     <MESSAGE value="dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="dockerfile" />
+    <MESSAGE value="docker 1 task" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker 1 task" />
   </component>
 </project>
