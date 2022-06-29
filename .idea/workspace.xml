@@ -4,8 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="docker 3 task">
-      <change afterPath="$PROJECT_DIR$/virt-homeworks/05-virt-03-docker/ansible/Dockerfile" afterDir="false" />
+    <list default="true" id="ddf9e5dd-4e63-42ad-8fed-f44941c53435" name="Changes" comment="docker 4 task">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656500595303</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="docker 4 task">
+      <created>1656501509524</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1656501509524</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +282,7 @@
     <MESSAGE value="docker 1 task" />
     <MESSAGE value="docker 2 task" />
     <MESSAGE value="docker 3 task" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker 3 task" />
+    <MESSAGE value="docker 4 task" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker 4 task" />
   </component>
 </project>
