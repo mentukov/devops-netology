@@ -192,6 +192,8 @@ drwxr-xr-x  5 mentukov  staff  160 29 июн 13:45 ..
 
 Соберите Docker образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
 
+## Ответ
+https://hub.docker.com/repository/docker/mentukov/ansible
 
 ---
 
