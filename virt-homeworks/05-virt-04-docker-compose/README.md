@@ -363,6 +363,10 @@ Build 'yandex' finished after 4 minutes 22 seconds.
 ==> Builds finished. The artifacts of successful builds are:
 --> yandex: A disk image was created: centos-7-base (id: ) with family name centos
 ```
+<p align="center">
+  <img width="1200" height="600" src="./yandex image centos by packer.png">
+</p>
+
 ## Задача 2
 
 Создать вашу первую виртуальную машину в Яндекс.Облаке.
