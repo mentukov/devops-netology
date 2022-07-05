@@ -34,6 +34,7 @@ Overlay-сети используются в контексте кластеро
 ```
 docker node ls
 ```
+
 <p align="center">
   <img width="1200" height="600" src="./ya_vm.png">
 </p>
