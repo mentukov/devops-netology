@@ -93,11 +93,41 @@ internal_ip_address_node06 = "192.168.101.16"
 ## Задача 4 (*)
 
 Выполнить на лидере Docker Swarm кластера команду (указанную ниже) и дать письменное описание её функционала, что она делает и зачем она нужна:
-```
+```shell
+[centos@node01 ~]$ sudo docker swarm update --autolock=true
+Swarm updated.
+To unlock a swarm manager after it restarts, run the `docker swarm unlock`
+command and provide the following key:
+
+    SWMKEY-1-c02B1pSjmL0lLwdylEBzPYHqK+nS1PNY6QsDquZf2Xw
+
+Please remember to store this key in a password manager, since without it you
+will not be able to restart the manager.
+
+[centos@node01 ~]$ sudo service docker restart
+Redirecting to /bin/systemctl restart docker.service
+[centos@node01 ~]$ sudo docker service ls
+Error response from daemon: Swarm is encrypted and needs to be unlocked before it can be used. Please use "docker swarm unlock" to unlock it.
+
 # см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/
-docker swarm update --autolock=true
 ```
 
+```shell
+This at-rest encryption protects your service’s configuration and data from attackers who gain access to the encrypted Raft logs.
+
+[centos@node01 ~]$ sudo docker swarm unlock
+Please enter unlock key:
+[centos@node01 ~]$ sudo docker service ls
+ID             NAME                                MODE         REPLICAS   IMAGE                                          PORTS
+ijc6sgjkz24m   swarm_monitoring_alertmanager       replicated   1/1        stefanprodan/swarmprom-alertmanager:v0.14.0    
+lq4qsak9rk50   swarm_monitoring_caddy              replicated   1/1        stefanprodan/caddy:latest                      *:3000->3000/tcp, *:9090->9090/tcp, *:9093-9094->9093-9094/tcp
+x0ayxwsr4gss   swarm_monitoring_cadvisor           global       6/6        google/cadvisor:latest                         
+2acbej1fi62f   swarm_monitoring_dockerd-exporter   global       6/6        stefanprodan/caddy:latest                      
+i4q846fgnl58   swarm_monitoring_grafana            replicated   1/1        stefanprodan/swarmprom-grafana:5.3.4           
+moupqz0jx6yx   swarm_monitoring_node-exporter      global       6/6        stefanprodan/swarmprom-node-exporter:v0.16.0   
+vdoc2xqmo4ez   swarm_monitoring_prometheus         replicated   1/1        stefanprodan/swarmprom-prometheus:v2.5.0       
+iwrwfor15ux5   swarm_monitoring_unsee              replicated   1/1        cloudflare/unsee:v0.8.0        
+```
 
 ---
 
