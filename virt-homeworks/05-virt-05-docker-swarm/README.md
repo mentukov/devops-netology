@@ -112,9 +112,10 @@ Error response from daemon: Swarm is encrypted and needs to be unlocked before i
 # см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/
 ```
 
-```shell
-This at-rest encryption protects your service’s configuration and data from attackers who gain access to the encrypted Raft logs.
 
+###This at-rest encryption protects your service’s configuration and data from attackers who gain access to the encrypted Raft logs.
+
+```shell
 [centos@node01 ~]$ sudo docker swarm unlock
 Please enter unlock key:
 [centos@node01 ~]$ sudo docker service ls
