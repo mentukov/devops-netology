@@ -31,12 +31,50 @@ Overlay-сети используются в контексте кластеро
 Создать ваш первый Docker Swarm кластер в Яндекс.Облаке
 
 Для получения зачета, вам необходимо предоставить скриншот из терминала (консоли), с выводом команды:
-```
-docker node ls
+```shell
+➜  terraform git:(main) ✗ terraform apply
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+...
+Plan: 13 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + external_ip_address_node01 = (known after apply)
+  + external_ip_address_node02 = (known after apply)
+  + external_ip_address_node03 = (known after apply)
+  + external_ip_address_node04 = (known after apply)
+  + external_ip_address_node05 = (known after apply)
+  + external_ip_address_node06 = (known after apply)
+  + internal_ip_address_node01 = "192.168.101.11"
+  + internal_ip_address_node02 = "192.168.101.12"
+  + internal_ip_address_node03 = "192.168.101.13"
+  + internal_ip_address_node04 = "192.168.101.14"
+  + internal_ip_address_node05 = "192.168.101.15"
+  + internal_ip_address_node06 = "192.168.101.16"
+...
+Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+external_ip_address_node01 = "62.84.112.212"
+external_ip_address_node02 = "62.84.114.215"
+external_ip_address_node03 = "62.84.112.187"
+external_ip_address_node04 = "62.84.112.251"
+external_ip_address_node05 = "62.84.113.37"
+external_ip_address_node06 = "62.84.114.251"
+internal_ip_address_node01 = "192.168.101.11"
+internal_ip_address_node02 = "192.168.101.12"
+internal_ip_address_node03 = "192.168.101.13"
+internal_ip_address_node04 = "192.168.101.14"
+internal_ip_address_node05 = "192.168.101.15"
+internal_ip_address_node06 = "192.168.101.16"
 ```
 
 <p align="center">
-  <img width="1200" height="600" src="./ya_vm.png">
+  <img width="1200" height="600" src="./term1.png">
 </p>
 
 ## Задача 3
