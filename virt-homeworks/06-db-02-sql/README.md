@@ -408,17 +408,19 @@ postgres=# explain select * from clients as c where exists (select id from order
 1. Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. Задачу 1).
 
    ```bash
-   export PGPASSWORD=netology && pg_dumpall -h localhost -U test-admin-user > /media/postgresql/backup/all_$(date --iso-8601=m | sed 's/://g; s/+/z/g').sql
+➜  ~ export PGPASSWORD=postgres && pg_dumpall -h localhost -U postgres > /Users/mentukov/temp/all_$(date).sql
+➜  ~ ls /Users/mentukov/temp
+all_четверг,
    ```
 
 2. Остановите контейнер с PostgreSQL (но не удаляйте volumes).
 
-   ```bash 
-   $ docker-compose stop
-   Stopping psql ... done
-   $ docker ps -a
-   CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS                     PORTS     NAMES
-   213107257ce9   postgres:12   "docker-entrypoint.s…"   4 minutes ago   Exited (0) 2 seconds ago             psql
+```bash 
+➜  ~ docker stop pg-docker
+pg-docker
+$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS                     PORTS     NAMES
+213107257ce9   postgres:12   "docker-entrypoint.s…"   4 minutes ago   Exited (0) 2 seconds ago             psql
    ```
 
 3. Поднимите новый пустой контейнер с PostgreSQL.
