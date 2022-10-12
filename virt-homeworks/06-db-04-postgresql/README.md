@@ -231,6 +231,29 @@ COPY 8
 
 ALTER TABLE
 
+root@7fca3095a625:~# psql -U postgres
+psql (13.8 (Debian 13.8-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# \c test_database;
+You are now connected to database "test_database" as user "postgres".
+test_database=# ANALYZE orders;
+ANALYZE
+test_database=# SELECT attname, avg_width FROM pg_stats WHERE tablename = 'orders';
+ attname | avg_width 
+---------+-----------
+ id      |         4
+ title   |        16
+ price   |         4
+(3 rows)
+
+test_database=# \dt
+         List of relations
+ Schema |  Name  | Type  |  Owner   
+--------+--------+-------+----------
+ public | orders | table | postgres
+(1 row)
+
 
 ```
 
@@ -245,16 +268,52 @@ ALTER TABLE
 
 Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
 
+### Ответ
+
+```shell
+begin;
+
+  alter table public.orders rename to orders_old;
+
+  create table public.orders (
+      like public.orders_old
+      including defaults
+      including constraints
+      including indexes
+  );
+
+  create table public.orders_1 (check (price>499)) inherits (public.orders);
+  create table public.orders_2 (check (price<=499)) inherits (public.orders);
+
+  ALTER TABLE public.orders_1 OWNER TO postgres;
+  ALTER TABLE public.orders_2 OWNER TO postgres;
+
+  create rule orders_insert_more_499 as on insert to public.orders where (price>499) do instead insert into public.orders_1 values(NEW.*);
+  create rule orders_insert_eq_499_or_less as on insert to public.orders where (price<=499) do instead insert into public.orders_2 values(NEW.*);
+
+  insert into public.orders (id,title,price) select id,title,price from public.orders_old;
+
+  alter table public.orders_old alter id drop default;
+  ALTER SEQUENCE public.orders_id_seq OWNED BY public.orders.id;
+
+  drop table public.orders_old;
+
+end;
+```
+
 ## Задача 4
 
 Используя утилиту `pg_dump` создайте бекап БД `test_database`.
 
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
 
----
+### Ответ
 
-### Как cдавать задание
-
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
+```shell
+root@7fca3095a625:~# pg_dump -h localhost -U postgres -d test_database > test_database_dump.sql
+root@7fca3095a625:~# ls
+test_database_dump.sql	test_dump.sql
+root@7fca3095a625:~# sed -i.bak 's/title character varying(80)/title character varying(80) UNIQUE/g' /root/test_database_dump.sql 
+```
 
 ---
