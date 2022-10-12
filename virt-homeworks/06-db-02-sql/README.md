@@ -34,11 +34,10 @@ docker.io/library/postgres:12
 data
 ➜  ~ sudo docker volume create backup
 backup
-➜  ~ docker run --rm -d --name pg-docker -e POSTGRES_PASSWORD=postgres -ti -p 5432:5432 -v data:/var/lib/postgresql/data -v backup:/var/lib/postgresql postgres:12
-a548408bfa71e9d02d66cd227d67e7f3091f77b967904d880df7e327b73ce7bb
-➜  ~ docker exec -it pg-docker bash     
-root@a548408bfa71:/# psql -h localhost -U postgres
-psql (12.12 (Debian 12.12-1.pgdg110+1))
+mentukov@ubuntu:~$ sudo docker run --rm -d --name pg-docker -e POSTGRES_PASSWORD=postgres -ti -p 5432:5432 -v data:/var/lib/postgresql/data -v backup:/var/lib/postgresql postgres:12
+1579ad83a5a12954cf379b3a17921ce99e7aa8ee0399b59dd3de93ea81394a4d
+mentukov@ubuntu:~$ export PGPASSWORD=postgres && psql -h localhost -U postgres
+psql (12.12 (Ubuntu 12.12-0ubuntu0.20.04.1))
 Type "help" for help.
 
 postgres=# \l
@@ -51,6 +50,7 @@ postgres=# \l
  template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
            |          |          |            |            | postgres=CTc/postgres
 (3 rows)
+
 
 ```
 
@@ -86,34 +86,32 @@ postgres=# \l
 
 1)  Создадим пользователя test-admin-user и БД test_db.
 ```shell
-➜  ~ export PGPASSWORD=postgres && psql -h localhost -U postgres
-psql (14.5 (Homebrew), server 12.12 (Debian 12.12-1.pgdg110+1))
-Type "help" for help.
-
 postgres=# CREATE DATABASE test_db;
 CREATE DATABASE
 postgres=# CREATE ROLE "test-admin-user" SUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN;
 CREATE ROLE
+
 ```
 2) В БД test_db создадим таблицу orders и clients.
 ```shell
 postgres=# CREATE TABLE orders
-(
-id integer,
-name text,
-price integer,
-PRIMARY KEY (id)
-);
+postgres-# (
+postgres(# id integer,
+postgres(# name text,
+postgres(# price integer,
+postgres(# PRIMARY KEY (id)
+postgres(# );
 CREATE TABLE
-postgres=# CREATE TABLE clients 
-(
-id integer PRIMARY KEY,
-lastname text,
-country text,
-booking integer,
-FOREIGN KEY (booking) REFERENCES orders (Id)
-);
+postgres=# CREATE TABLE clients
+postgres-# (
+postgres(# id integer PRIMARY KEY,
+postgres(# lastname text,
+postgres(# country text,
+postgres(# booking integer,
+postgres(# FOREIGN KEY (booking) REFERENCES orders (Id)
+postgres(# );
 CREATE TABLE
+
 ```
 3) Предоставим привилегии на все операции пользователю test-admin-user на таблицы БД test_db.
 ```shell
@@ -129,8 +127,6 @@ CREATE ROLE
 ```
 5) Предоставим пользователю test-simple-user права на SELECT/INSERT/UPDATE/DELETE данных таблиц БД test_db.
 ```shell
-postgres=# CREATE ROLE "test-simple-user" NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN;
-CREATE ROLE
 postgres=# GRANT SELECT ON TABLE public.clients TO "test-simple-user";
 GRANT
 postgres=# GRANT INSERT ON TABLE public.clients TO "test-simple-user";
@@ -147,6 +143,7 @@ postgres=# GRANT UPDATE ON TABLE public.orders TO "test-simple-user";
 GRANT
 postgres=# GRANT DELETE ON TABLE public.orders TO "test-simple-user";
 GRANT
+
 ```
 ### Результаты
 Итоговый список БД после выполнения пунктов выше.
@@ -193,7 +190,7 @@ Foreign-key constraints:
 ```
 SQL-запрос для выдачи списка пользователей с правами над таблицами test_db.
 ```shell
-SELECT 
+> SELECT 
     grantee, table_name, privilege_type 
 FROM 
     information_schema.table_privileges 
@@ -201,11 +198,16 @@ WHERE
     grantee in ('test-admin-user','test-simple-user')
     and table_name in ('clients','orders')
 order by 
-    1,2,3;
+    1,2,3
+
+grantee|table_name|privilege_type|
+-------+----------+--------------+
+
+0 row(s) fetched.
 ```
 Список пользователей с правами над таблицами test_db.
 ```shell
-     grantee      | table_name | privilege_type 
+     grantee      | table_name | privilege_type
 ------------------+------------+----------------
  test-admin-user  | clients    | DELETE
  test-admin-user  | clients    | INSERT
@@ -309,6 +311,7 @@ postgres=# select * from clients;
   5 | Ritchie Blackmore    | Russia  |        
 (5 rows)
 
+
 ```
 
 ---
@@ -371,14 +374,13 @@ postgres=# select * from clients as c where exists (select id from orders as o w
 
 ```shell
 postgres=# explain select * from clients as c where exists (select id from orders as o where c.booking = o.id);
-                               QUERY PLAN                               
-------------------------------------------------------------------------
- Hash Join  (cost=37.00..57.24 rows=810 width=72)
-   Hash Cond: (c.booking = o.id)
-   ->  Seq Scan on clients c  (cost=0.00..18.10 rows=810 width=72)
-   ->  Hash  (cost=22.00..22.00 rows=1200 width=4)
-         ->  Seq Scan on orders o  (cost=0.00..22.00 rows=1200 width=4)
-(5 rows)
+                                      QUERY PLAN                                       
+---------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.15..25.91 rows=5 width=47)
+   ->  Seq Scan on clients c  (cost=0.00..1.05 rows=5 width=47)
+   ->  Index Only Scan using orders_pkey on orders o  (cost=0.15..4.97 rows=1 width=4)
+         Index Cond: (id = c.booking)
+(4 rows)
 
 ```
 > Объясните что значат полученные значения.
@@ -407,37 +409,58 @@ postgres=# explain select * from clients as c where exists (select id from order
 
 1. Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. Задачу 1).
 
-   ```bash
-➜  ~ export PGPASSWORD=postgres && pg_dumpall -h localhost -U postgres > /Users/mentukov/temp/all_$(date).sql
-➜  ~ ls /Users/mentukov/temp
-all_четверг,
-   ```
+```shell
+mentukov@ubuntu:~$ pg_dump -h localhost -U postgres test_db > backup/test_db.sql
+mentukov@ubuntu:~$ ls backup/
+test_db.sql
+
+```
 
 2. Остановите контейнер с PostgreSQL (но не удаляйте volumes).
 
-```bash 
-➜  ~ docker stop pg-docker
+```shell
+mentukov@ubuntu:~$ sudo docker container ls
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+1579ad83a5a1   postgres:12   "docker-entrypoint.s…"   48 minutes ago   Up 48 minutes   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   pg-docker
+mentukov@ubuntu:~$ sudo docker stop pg-docker
 pg-docker
-$ docker ps -a
-CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS                     PORTS     NAMES
-213107257ce9   postgres:12   "docker-entrypoint.s…"   4 minutes ago   Exited (0) 2 seconds ago             psql
-   ```
+
+```
 
 3. Поднимите новый пустой контейнер с PostgreSQL.
 
-   ```bash
-   docker run --rm -d -e POSTGRES_USER=test-admin-user -e POSTGRES_PASSWORD=netology -e POSTGRES_DB=test_db -v psql_backup:/media/postgresql/backup --name psql2 postgres:12
-   ```
-   ```bash
-   CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                     PORTS      NAMES
-   cf2c8f875948   postgres:12   "docker-entrypoint.s…"   4 minutes ago    Up 4 minutes               5432/tcp   psql2
-   213107257ce9   postgres:12   "docker-entrypoint.s…"   14 minutes ago   Exited (0) 5 minutes ago              psql
-   ```
+```shell
+mentukov@ubuntu:~$ sudo docker container ls
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+1579ad83a5a1   postgres:12   "docker-entrypoint.s…"   48 minutes ago   Up 48 minutes   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   pg-docker
+mentukov@ubuntu:~$ sudo docker stop pg-docker
+pg-docker
+
+```
 
 4. Восстановите БД test_db в новом контейнере.
 
-   ```bash
-   docker exec -it psql2  bash
-   export PGPASSWORD=netology && psql -h localhost -U test-admin-user -f $(ls -1trh /media/postgresql/backup/all_*.sql) test_db
-   ```
+```shell
+mentukov@ubuntu:~$ sudo docker exec -ti pg-docker3 bash
+root@5585be48f101:/# psql -U postgres -c "CREATE DATABASE test_db;"
+CREATE DATABASE
+root@5585be48f101:/# psql -U postgres test_db < backups/test_db.sql
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+
+
+```
+
 ---
