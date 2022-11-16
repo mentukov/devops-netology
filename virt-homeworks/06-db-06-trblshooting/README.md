@@ -38,6 +38,18 @@ db.collection_name.find(<query_string>).maxTimeMS(<time_limit>)
 
 Как вы думаете, в чем может быть проблема?
  
+```shell
+Недостаточно оперативной памяти для такого количества реплик в рамках одного сервера. 
+И записанные значения стали очищаться раньше истечения TTL.
+
+Warning - If you edit an existing database that already has data in it, 
+some updates might fail as they could cause the total database size to exceed the memory limit. 
+
+If memory limit is reached, Redis will start to reply with an error to write commands 
+(but will continue to accept read-only commands).
+
+```
+
 ## Задача 3
 
 Вы подняли базу данных MySQL для использования в гис-системе. При росте количества записей, в таблицах базы,
