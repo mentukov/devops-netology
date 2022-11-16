@@ -71,6 +71,15 @@
 Установите терраформ при помощи менеджера пакетов используемого в вашей операционной системе.
 В виде результата этой задачи приложите вывод команды `terraform --version`.
 
+```shell
+mentukov@ubuntu:~$ sudo snap install terraform --classic
+terraform 1.3.4 from Jon Seager (jnsgruk) installed
+mentukov@ubuntu:~$ terraform --version
+Terraform v1.3.4
+on linux_arm64
+
+```
+
 ## Задача 3. Поддержка легаси кода. 
 
 В какой-то момент вы обновили терраформ до новой версии, например с 0.12 до 0.13. 
@@ -80,6 +89,24 @@
 
 В виде результата этой задачи приложите вывод `--version` двух версий терраформа доступных на вашем компьютере 
 или виртуальной машине.
+
+```shell
+mentukov@ubuntu:~$ sudo terraform --version
+Terraform v1.3.3
+on linux_arm64
+
+Your version of Terraform is out of date! The latest version
+is 1.3.4. You can update by downloading from https://www.terraform.io/downloads.html
+mentukov@ubuntu:~$ sudo tfswitch
+✔ 1.3.4
+Downloading to: /root/.terraform.versions
+17494667 bytes downloaded
+Switched terraform to version "1.3.4" 
+mentukov@ubuntu:~$ sudo terraform --version
+Terraform v1.3.4
+on linux_arm64
+
+```
 
 ---
 
