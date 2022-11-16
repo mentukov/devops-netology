@@ -63,11 +63,22 @@ InterfaceError: (InterfaceError) 2013: Lost connection to MySQL server during qu
 Какие пути решения данной проблемы вы можете предложить?
 
 ```shell
+Обычно это указывает на проблемы с сетевым подключением, и следует проверить состояние сети.
+
+Иногда такая ошибка возникает, когда миллионы строк отправляются как часть одного или нескольких 
+запросов. В этом случае следует попробовать увеличить net_read_timeout с значения по умолчанию 
+30 секунд до 60 секунд или дольше, достаточного для завершения передачи данных.
+
+Реже это может произойти, когда клиент пытается установить первоначальное соединение с сервером. 
+В этом случае, если значение connect_timeout недостаточно, можно решить проблему, 
+увеличив его до десяти секунд, возможно, больше, если соединение медленное.
+
 B.3.2.3 Lost connection to MySQL server
 There are three likely causes for this error message.
 
 Usually it indicates network connectivity trouble and you should check the condition of your network 
-if this error occurs frequently. If the error message includes “during query,” this is probably the case you are experiencing.
+if this error occurs frequently. If the error message includes “during query,” 
+this is probably the case you are experiencing.
 
 Sometimes the “during query” form happens when millions of rows are being sent as part of one or more queries. 
 If you know that this is happening, you should try increasing net_read_timeout from its default of 
