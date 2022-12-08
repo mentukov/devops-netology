@@ -96,57 +96,116 @@ export YC_FOLDER_ID=$(yc config get folder-id)
 
 > 1. Ответ на вопрос: при помощи какого инструмента (из разобранных на прошлом занятии) можно создать свой образ ami?
 
-[Packer](https://www.packer.io/)
+Packer
 
 > 2. Ссылку на репозиторий с исходной конфигурацией терраформа.  
 
-**В первом варианте** секреты убраны в variables.tf, во втором появилось еще более интересное кмк решение
 
-[Ссылка на репозиторий](https://github.com/skurudo/devops-netology/tree/main/VIRT-15%20-%20%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%2C%20%D0%B1%D0%B0%D0%B7%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%20Terraform/7.2.%20%D0%9E%D0%B1%D0%BB%D0%B0%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D1%8B%20%D0%B8%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81%20Terraform/src-01)
-
-![Сделалося](https://github.com/skurudo/devops-netology/blob/main/VIRT-15%20-%20%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%2C%20%D0%B1%D0%B0%D0%B7%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%20Terraform/7.2.%20%D0%9E%D0%B1%D0%BB%D0%B0%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D1%8B%20%D0%B8%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81%20Terraform/01.jpg)
 
 ```
-vagrant@dev-docker:~/07-terraform-02-syntax$ terraform init
+mentukov@ubuntu:~/cloud-terraform$ sudo terraform plan
 
-Initializing the backend...
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
 
-Initializing provider plugins...
-- Reusing previous version of yandex-cloud/yandex from the dependency lock file
-- Using previously-installed yandex-cloud/yandex v0.76.0
+Terraform will perform the following actions:
 
-Terraform has been successfully initialized!
-```
+  # yandex_compute_instance.test will be created
+  + resource "yandex_compute_instance" "test" {
+      + created_at                = (known after apply)
+      + folder_id                 = (known after apply)
+      + fqdn                      = (known after apply)
+      + hostname                  = (known after apply)
+      + id                        = (known after apply)
+      + name                      = "test"
+      + network_acceleration_type = "standard"
+      + platform_id               = "standard-v1"
+      + service_account_id        = (known after apply)
+      + status                    = (known after apply)
+      + zone                      = (known after apply)
 
-```
-vagrant@dev-docker:~/07-terraform-02-syntax$ terraform plan
-...
+      + boot_disk {
+          + auto_delete = true
+          + device_name = (known after apply)
+          + disk_id     = (known after apply)
+          + mode        = (known after apply)
+
+          + initialize_params {
+              + block_size  = (known after apply)
+              + description = (known after apply)
+              + image_id    = "    "
+              + name        = (known after apply)
+              + size        = (known after apply)
+              + snapshot_id = (known after apply)
+              + type        = "network-hdd"
+            }
+        }
+
+      + network_interface {
+          + index              = (known after apply)
+          + ip_address         = (known after apply)
+          + ipv4               = true
+          + ipv6               = (known after apply)
+          + ipv6_address       = (known after apply)
+          + mac_address        = (known after apply)
+          + nat                = true
+          + nat_ip_address     = (known after apply)
+          + nat_ip_version     = (known after apply)
+          + security_group_ids = (known after apply)
+          + subnet_id          = (known after apply)
+        }
+
+      + placement_policy {
+          + host_affinity_rules = (known after apply)
+          + placement_group_id  = (known after apply)
+        }
+
+      + resources {
+          + core_fraction = 100
+          + cores         = 2
+          + memory        = 4
+        }
+
+      + scheduling_policy {
+          + preemptible = (known after apply)
+        }
+    }
+
+  # yandex_vpc_network.my-network will be created
+  + resource "yandex_vpc_network" "my-network" {
+      + created_at                = (known after apply)
+      + default_security_group_id = (known after apply)
+      + folder_id                 = (known after apply)
+      + id                        = (known after apply)
+      + labels                    = (known after apply)
+      + name                      = "my-network"
+      + subnet_ids                = (known after apply)
+    }
+
+  # yandex_vpc_subnet.my-subnet will be created
+  + resource "yandex_vpc_subnet" "my-subnet" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = "my-subnet"
+      + network_id     = (known after apply)
+      + v4_cidr_blocks = [
+          + "192.168.10.0/24",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = "ru-central1-a"
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
 Changes to Outputs:
-  + external_ip_address_node01_yandex_cloud = (known after apply)
-  + internal_ip_address_node01_yandex_cloud = "192.168.101.11"
+  + external_ip_address_test_vm = (known after apply)
+  + internal_ip_address_test_vm = (known after apply)
 
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you
-run "terraform apply" now.
-```
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform
+apply" now.
 
-```
-yandex_vpc_network.my-network: Creating...
-yandex_vpc_network.my-network: Creation complete after 1s [id=enp72seo79pp84rnamra]
-yandex_vpc_subnet.my-subnet: Creating...
-yandex_vpc_subnet.my-subnet: Creation complete after 1s [id=e9bih4pq1ealhg45od4i]
-yandex_compute_instance.test: Creating...
-yandex_compute_instance.test: Still creating... [10s elapsed]
-yandex_compute_instance.test: Still creating... [20s elapsed]
-yandex_compute_instance.test: Still creating... [30s elapsed]
-yandex_compute_instance.test: Still creating... [40s elapsed]
-yandex_compute_instance.test: Creation complete after 45s [id=fhm646e8t1gqbte8ceoo]
-
-Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
-
-Outputs:
-
-external_ip_address_test_vm = "51.250.67.157"
-internal_ip_address_test_vm = "192.168.10.8"
 ```
