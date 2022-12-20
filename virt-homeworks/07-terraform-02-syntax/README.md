@@ -100,7 +100,7 @@ Packer
 
 > 2. Ссылку на репозиторий с исходной конфигурацией терраформа.  
 
-
+[Ссылка](https://github.com/mentukov/devops-netology/tree/main/virt-homeworks/07-terraform-02-syntax/src)
 
 ```
 mentukov@ubuntu:~/cloud-terraform$ sudo terraform plan
