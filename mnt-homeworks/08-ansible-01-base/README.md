@@ -283,3 +283,5 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 #### 12. Заполните README.md ответами на вопросы. Сделайте git push в ветку master. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым playbook и заполненным README.md.
 
 Доступно по ссылке ниже:
+    >https://github.com/mentukov/devops-netology/tree/main/mnt-homeworks/08-ansible-01-base/playbook
+    
