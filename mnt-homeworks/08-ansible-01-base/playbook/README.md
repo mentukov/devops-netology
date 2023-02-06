@@ -2,12 +2,11 @@
 # Самоконтроль выполненения задания
 
 1. Где расположен файл с `some_fact` из второго пункта задания? 
-
-`group_vars\all\examp.yml`
+>`group_vars\all\examp.yml`
 2. Какая команда нужна для запуска вашего `playbook` на окружении `test.yml`? 
-# `ansible-playbook site.yml -i inventory/test.yml`
+>`ansible-playbook site.yml -i inventory/test.yml`
 3. Какой командой можно зашифровать файл?
-# `ansible-vault encrypt`
+>`ansible-vault encrypt`
 4. Какой командой можно расшифровать файл?
 # `ansible-vault decrypt`
 5. Можно ли посмотреть содержимое зашифрованного файла без команды расшифровки файла? Если можно, то как?
