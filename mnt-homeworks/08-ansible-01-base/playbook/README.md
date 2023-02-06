@@ -2,7 +2,8 @@
 # Самоконтроль выполненения задания
 
 1. Где расположен файл с `some_fact` из второго пункта задания? 
-# `group_vars\all\examp.yml`
+
+`group_vars\all\examp.yml`
 2. Какая команда нужна для запуска вашего `playbook` на окружении `test.yml`? 
 # `ansible-playbook site.yml -i inventory/test.yml`
 3. Какой командой можно зашифровать файл?
