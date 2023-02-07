@@ -2,4 +2,5 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: <IP_here>
+      ansible_host: 158.160.25.188
+      ansible_ssh_user: mentukov
