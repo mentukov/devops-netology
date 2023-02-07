@@ -1,6 +1,11 @@
 ---
 clickhouse:
   hosts:
-    clickhouse-01:
-      ansible_host: 158.160.25.188
+    click01:
+      ansible_host: 158.160.16.20
+      ansible_ssh_user: mentukov
+vector:
+  hosts:
+    click02:
+      ansible_host: 158.160.1.252
       ansible_ssh_user: mentukov
