@@ -102,4 +102,4 @@
   post_tasks:
     - name: Show connect URL lighthouse
       debug:
-        msg: "http://{{ ansible_host }}/#http://{{ hostvars['clickhouse-01'].ansible_host }}:8123/?user={{ clickhouse_user }}"
+        msg: "http://{{ ansible_host }}/#http://{{ hostvars['click01'].ansible_host }}:8123/?user={{ clickhouse_user }}"
