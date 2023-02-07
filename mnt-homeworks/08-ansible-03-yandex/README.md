@@ -186,7 +186,13 @@ vector01                   : ok=3    changed=0    unreachable=0    failed=0    s
 ```
 
 9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
+
+done
+https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/08-ansible-03-yandex/playbook/README.md
+
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+
+https://github.com/mentukov/devops-netology/tree/08-ansible-03-yandex-v0.3/mnt-homeworks/08-ansible-03-yandex
 
 ---
 
