@@ -11,7 +11,7 @@
     - block:
         - name: Get clickhouse distrib
           ansible.builtin.get_url:
-            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.x86_64.rpm"
             dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
             mode: 0755
           with_items: "{{ clickhouse_packages }}"
