@@ -19,9 +19,9 @@
       become: true
       ansible.builtin.yum:
         name:
-          - clickhouse-common-static-{{ clickhouse_version }}.rpm
-          - clickhouse-client-{{ clickhouse_version }}.rpm
-          - clickhouse-server-{{ clickhouse_version }}.rpm
+          - clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm
+          - clickhouse-client-{{ clickhouse_version }}.x86_64.rpm
+          - clickhouse-server-{{ clickhouse_version }}.x86_64.rpm
       notify: Start clickhouse service
     - name: Flush handlers
       meta: flush_handlers
