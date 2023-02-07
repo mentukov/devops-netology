@@ -65,7 +65,7 @@
     - name: Install git
       ansible.builtin.yum:
         name: "git"
-        state: "latest"
+        state: "release-0.22"
         update_cache: true
     - name: Lighthouse
       git:
