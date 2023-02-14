@@ -179,3 +179,4 @@ lighthouse-01              : ok=9    changed=7    unreachable=0    failed=0    s
 vector-01                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
      
+<img width="1265" alt="Снимок экрана 2023-02-14 в 20 51 32" src="https://user-images.githubusercontent.com/65667114/218750858-6dc5b503-017e-4d08-8487-e8fb4d80c0e4.png">
