@@ -16,7 +16,7 @@
 
 ```
   clickhouse:
-    hosts:
+    hosts: 
       click01:
         ansible_host: 158.160.16.20
         ansible_ssh_user: ***
