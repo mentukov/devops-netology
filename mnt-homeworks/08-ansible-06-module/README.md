@@ -246,7 +246,7 @@ mentukov@ubuntu:~/test/ansible/playbook$ tree
 └── site.yml
 ```
 
-12. Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
+12. Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `v1.0.0` на этот коммит.
 
 https://github.com/mentukov/yandex_cloud_elk/tree/1.0.0
 
