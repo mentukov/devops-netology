@@ -318,6 +318,8 @@ localhost                  : ok=3    changed=1    unreachable=0    failed=0    s
 
 https://github.com/mentukov/yandex_cloud_elk/tree/1.0.0
 
+https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/08-ansible-06-module/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz
+
 
 
 
