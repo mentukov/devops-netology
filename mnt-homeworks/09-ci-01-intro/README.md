@@ -31,6 +31,8 @@
 
 
 Если всё отработало в рамках ожидания - выгрузить схемы workflow для импорта в XML. Файлы с workflow приложить к решению задания.
+
 https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-01-intro/for%20bug.xml
+
 https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-01-intro/for%20tasks.xml
 ---
