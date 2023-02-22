@@ -24,16 +24,17 @@
 
 Создать задачу с типом bug, попытаться провести его по всему workflow до Done. Создать задачу с типом epic, к ней привязать несколько задач с типом task, провести их по всему workflow до Done. При проведении обеих задач по статусам использовать kanban. Вернуть задачи в статус Open.
 Перейти в scrum, запланировать новый спринт, состоящий из задач эпика и одного бага, стартовать спринт, провести задачи до состояния Closed. Закрыть спринт.
-<img width="1133" alt="Снимок экрана 2023-02-17 в 19 19 16" src="https://user-images.githubusercontent.com/65667114/219639619-d57cbc01-2bad-4da7-8fcb-18f3b9f9930f.png">
-<img width="1125" alt="Снимок экрана 2023-02-17 в 19 19 42" src="https://user-images.githubusercontent.com/65667114/219639706-aff84e6f-f065-47b4-8b67-ca451a6791cd.png">
+<img width="1081" alt="Снимок экрана 2023-02-22 в 15 06 38" src="https://user-images.githubusercontent.com/65667114/220547914-d7e84a30-d3d0-450b-bea2-514444e26efc.png">
+<img width="1116" alt="Снимок экрана 2023-02-22 в 15 06 08" src="https://user-images.githubusercontent.com/65667114/220547942-3dc78173-a0f8-4612-91e3-6c6032153cb8.png">
+
 <img width="1163" alt="Снимок экрана 2023-02-17 в 19 20 05" src="https://user-images.githubusercontent.com/65667114/219639792-a09c66c1-cdae-4852-84ef-e71afae31def.png">
 
 
 
 Если всё отработало в рамках ожидания - выгрузить схемы workflow для импорта в XML. Файлы с workflow приложить к решению задания.
 
-https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-01-intro/for%20bug.xml
+https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-01-intro/for%20bug%20(1).xml
 
-https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-01-intro/for%20tasks.xml
+https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-01-intro/for%20tasks%20(1).xml
 
 ---
