@@ -380,7 +380,35 @@ OS name: "linux", version: "5.4.0-139-generic", arch: "amd64", family: "unix"
 
 1. Меняем в `pom.xml` блок с зависимостями под наш артефакт из первого пункта задания для Nexus (java с версией 8_282)
 2. Запускаем команду `mvn package` в директории с `pom.xml`, ожидаем успешного окончания
+
+```
+WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /home/vagrant/devops-netology/mnt-homeworks/09-ci-03-cicd/mvn/target/simple-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  42.700 s
+[INFO] Finished at: 2023-02-28T08:34:07Z
+[INFO] ------------------------------------------------------------------------
+08:34:07 vagrant@ubuntu-focal mvn ±|main ✗|→ ls
+pom.xml  target
+08:34:21 vagrant@ubuntu-focal mvn ±|main ✗|→ ll target/
+total 8.0K
+drwxrwxr-x 2 vagrant vagrant 4.0K Feb 28 08:34 maven-archiver/
+-rw-rw-r-- 1 vagrant vagrant 1.6K Feb 28 08:34 simple-app-1.0-SNAPSHOT.jar
+```
+
 3. Проверяем директорию `~/.m2/repository/`, находим наш артефакт
+
+```
+08:35:38 vagrant@ubuntu-focal 8_282 → ll
+total 12K
+-rw-rw-r-- 1 vagrant vagrant 175 Feb 28 08:33 _remote.repositories
+-rw-rw-r-- 1 vagrant vagrant   0 Feb 28 08:33 java-8_282-distrib.tar.gz
+-rw-rw-r-- 1 vagrant vagrant  40 Feb 28 08:33 java-8_282-distrib.tar.gz.sha1
+-rw-rw-r-- 1 vagrant vagrant 392 Feb 28 08:33 java-8_282.pom.lastUpdated
+```
+
 4. В ответе присылаем исправленный файл `pom.xml`
 
 ---
