@@ -364,6 +364,16 @@ https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-03-cic
 2. Разархивируем, делаем так, чтобы binary был доступен через вызов в shell (или меняем переменную PATH или любой другой удобный вам способ)
 3. Удаляем из `apache-maven-<version>/conf/settings.xml` упоминание о правиле, отвергающем http соединение( раздел mirrors->id: my-repository-http-unblocker)
 4. Проверяем `mvn --version`
+
+```
+08:05:51 vagrant@ubuntu-focal ~ → mvn -version
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /opt/apache-maven-3.6.3
+Java version: 13.0.1, vendor: Oracle Corporation, runtime: /opt/jdk-13.0.1
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "5.4.0-139-generic", arch: "amd64", family: "unix"
+```
+
 5. Забираем директорию [mvn](./mvn) с pom
 
 ### Основная часть
