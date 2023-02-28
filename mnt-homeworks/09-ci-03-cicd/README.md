@@ -411,6 +411,8 @@ total 12K
 
 4. В ответе присылаем исправленный файл `pom.xml`
 
+https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-03-cicd/mvn/pom.xml
+
 ---
 
 ### Как оформить ДЗ?
