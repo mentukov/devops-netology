@@ -351,6 +351,7 @@ INFO: ------------------------------------------------------------------------
 2. В него же загружаем такой же артефакт, но с version: 8_102
 3. Проверяем, что все файлы загрузились успешно
 <img width="481" alt="Снимок экрана 2023-02-28 в 15 28 03" src="https://user-images.githubusercontent.com/65667114/221784375-54c03566-4449-4df6-989e-536cb82ca490.png">
+
 5. В ответе присылаем файл `maven-metadata.xml` для этого артефекта
 https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/09-ci-03-cicd/maven-metadata.xml
 
