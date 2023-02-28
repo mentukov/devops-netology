@@ -196,11 +196,11 @@ nexus-01                   : ok=17   changed=15   unreachable=0    failed=0    s
 sonar-01                   : ok=32   changed=9    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0  
 ```
 
-5. Проверяем готовность Sonarqube через [браузер](http://158.160.22.184:9000)
+5. Проверяем готовность Sonarqube через [браузер](http://51.250.100.98:9000)
 <img width="1434" alt="Снимок экрана 2023-02-22 в 17 27 49" src="https://user-images.githubusercontent.com/65667114/220578741-d8dd3502-7b5f-4230-96eb-0c1c49b20fb2.png">
 6. Заходим под admin\admin, меняем пароль на свой
 
-7.  Проверяем готовность Nexus через [браузер](http://158.160.22.184:9000)
+7.  Проверяем готовность Nexus через [браузер](http://51.250.111.228:9000)
 <img width="1433" alt="Снимок экрана 2023-02-22 в 17 27 39" src="https://user-images.githubusercontent.com/65667114/220578820-08d40de1-be1e-4f2f-a318-0fab7715ebfb.png">
 8. Подключаемся под admin\admin123, меняем пароль, сохраняем анонимный доступ
 
