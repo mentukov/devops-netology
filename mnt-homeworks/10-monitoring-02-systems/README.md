@@ -120,7 +120,7 @@ Nagios относится к pull-модели мониторинга, в кот
 
 Таким образом, TICK и Zabbix являются гибридными системами, которые могут работать как в режиме push, так и в режиме pull.
 
-3. Склонируйте себе [репозиторий](https://github.com/influxdata/sandbox/tree/master) и запустите TICK-стэк, 
+7. Склонируйте себе [репозиторий](https://github.com/influxdata/sandbox/tree/master) и запустите TICK-стэк, 
 используя технологии docker и docker-compose.
 
 В виде решения на это упражнение приведите выводы команд с вашего компьютера (виртуальной машины):
@@ -176,7 +176,6 @@ mentukov@mentukov-MINIPC-PN50:~/sandbox$ curl -v http://localhost:9092/kapacitor
 
 <img width="1415" alt="Снимок экрана 2023-03-01 в 13 08 42" src="https://user-images.githubusercontent.com/65667114/222050666-9e9cb4ba-78b7-49eb-8627-07e5048e348e.png">
 
-
 А также скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`). 
 
 P.S.: если при запуске некоторые контейнеры будут падать с ошибкой - проставьте им режим `Z`, например
@@ -220,6 +219,53 @@ P.S.: если при запуске некоторые контейнеры б�
 
 После настройке перезапустите telegraf, обновите веб интерфейс и приведите скриншотом список `measurments` в 
 веб-интерфейсе базы telegraf.autogen . Там должны появиться метрики, связанные с docker.
+
+```
+[agent]
+  interval = "5s"
+  round_interval = true
+  metric_batch_size = 1000
+  metric_buffer_limit = 10000
+  collection_jitter = "0s"
+  flush_interval = "5s"
+  flush_jitter = "0s"
+  precision = ""
+  debug = false
+  quiet = false
+  logfile = ""
+  hostname = "$HOSTNAME"
+  omit_hostname = false
+
+[[outputs.influxdb]]
+  urls = ["http://influxdb:8086"]
+  database = "telegraf"
+  username = ""
+  password = ""
+  retention_policy = ""
+  write_consistency = "any"
+  timeout = "5s"
+
+[[inputs.docker]]
+  endpoint = "unix:///var/run/docker.sock"
+  container_names = []
+  timeout = "5s"
+  perdevice = true
+  total = false
+  
+[[inputs.cpu]]
+[[inputs.mem]]
+[[inputs.disk]]
+  ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
+[[inputs.system]]
+[[inputs.influxdb]]
+  urls = ["http://influxdb:8086/debug/vars"]
+[[inputs.syslog]]
+#   ## Specify an ip or hostname with port - eg., tcp://localhost:6514, tcp://10.0.0.1:6514
+#   ## Protocol, address and port to host the syslog receiver.
+#   ## If no host is specified, then localhost is used.
+#   ## If no port is specified, 6514 is used (RFC5425#section-4.1).
+  server = "tcp://localhost:6514"
+```
 
 Факультативно можете изучить какие метрики собирает telegraf после выполнения данного задания.
 
