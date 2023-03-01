@@ -29,7 +29,25 @@
 ### Ответ
 
 ```
-
+vagrant@ubuntu-focal:~$ grafana-cli -v
+grafana cli version 9.4.1
+vagrant@ubuntu-focal:~$ grafana-server -v
+Version 9.4.1 (commit: fd67ab151d, branch: HEAD)
+vagrant@ubuntu-focal:~$ prometheus --version
+prometheus, version 2.37.5 (branch: HEAD, revision: 8d25a0867918173e501b417e7acd85861df8fb0e)
+  build user:       root@fa6380105630
+  build date:       20221209-12:46:41
+  go version:       go1.18.9
+  platform:         linux/amd64
+vagrant@ubuntu-focal:~$ sudo systemctl status node_exporter
+● node_exporter.service - Node Exporter
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; disabled; vendor preset: enabled)
+     Active: active (running) since Wed 2023-03-01 08:02:42 UTC; 2h 0min ago
+   Main PID: 20156 (node_exporter)
+      Tasks: 7 (limit: 1131)
+     Memory: 11.0M
+     CGroup: /system.slice/node_exporter.service
+             └─20156 /usr/local/bin/node_exporter  
 ```
 <img width="1423" alt="Снимок экрана 2023-03-01 в 17 25 51" src="https://user-images.githubusercontent.com/65667114/222099636-0eec0cad-daa1-49da-b964-5d2056618c91.png">
 <img width="519" alt="Снимок экрана 2023-03-01 в 17 26 32" src="https://user-images.githubusercontent.com/65667114/222099704-27fa1b21-89c4-428f-91bb-332e7781ecfd.png">
@@ -58,7 +76,18 @@
 ### Ответ
 
 ```
-
+CPU
+100 - (avg by (instance)(rate(node_cpu_seconds_total{job="prometheus",mode="idle"}[5m])) * 100)
+CPULA 1/5/15
+node_load1{job="prometheus"}
+node_load5{job="prometheus"}
+node_load15{job="prometheus"}
+MEMORY
+node_memory_MemFree_bytes{job="prometheus"}
+node_memory_MemFree_bytes / node_memory_Memtotal_bytes) * 100
+DISK
+node_filesystem_free_bytes{job="prometheus",mountpoint="/"}
+node_filesystem_avail_bytes {fstype=~"ext4|xfs"} node_filesystem_size_bytes {fstype=~"ext4|xfs"}
 ```
 
 <img width="1421" alt="Снимок экрана 2023-03-01 в 17 25 37" src="https://user-images.githubusercontent.com/65667114/222102347-b281d22d-451e-4b42-bc89-1b3e4fae711c.png">
