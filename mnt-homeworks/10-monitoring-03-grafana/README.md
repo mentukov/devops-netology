@@ -22,9 +22,9 @@
 ### Задание 1
 
 1. Используя директорию [help](./help) внутри этого домашнего задания, запустите связку prometheus-grafana.
-1. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.
-1. Подключите поднятый вами prometheus, как источник данных.
-1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
+2. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.
+3. Подключите поднятый вами prometheus, как источник данных.
+4. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
 ### Ответ
 
@@ -61,8 +61,8 @@ vagrant@ubuntu-focal:~$ sudo systemctl status node_exporter
 Изучите самостоятельно ресурсы:
 
 1. [PromQL tutorial for beginners and humans](https://valyala.medium.com/promql-tutorial-for-beginners-9ab455142085).
-1. [Understanding Machine CPU usage](https://www.robustperception.io/understanding-machine-cpu-usage).
-1. [Introduction to PromQL, the Prometheus query language](https://grafana.com/blog/2020/02/04/introduction-to-promql-the-prometheus-query-language/).
+2. [Understanding Machine CPU usage](https://www.robustperception.io/understanding-machine-cpu-usage).
+3. [Introduction to PromQL, the Prometheus query language](https://grafana.com/blog/2020/02/04/introduction-to-promql-the-prometheus-query-language/).
 
 Создайте Dashboard и в ней создайте Panels:
 
@@ -95,7 +95,7 @@ node_filesystem_avail_bytes {fstype=~"ext4|xfs"} node_filesystem_size_bytes {fst
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
-1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
+2. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 <img width="1191" alt="Снимок экрана 2023-03-01 в 18 38 46" src="https://user-images.githubusercontent.com/65667114/222116076-2d27edb8-2c39-4607-8397-ffa347fff800.png">
 
 
