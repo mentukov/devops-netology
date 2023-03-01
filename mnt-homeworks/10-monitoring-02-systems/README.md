@@ -129,6 +129,53 @@ Nagios относится к pull-модели мониторинга, в кот
     - curl http://localhost:8888
     - curl http://localhost:9092/kapacitor/v1/ping
 
+```
+mentukov@mentukov-MINIPC-PN50:~/sandbox$ curl -v  http://localhost:8086/ping
+*   Trying 127.0.0.1:8086...
+* Connected to localhost (127.0.0.1) port 8086 (#0)
+> GET /ping HTTP/1.1
+> Host: localhost:8086
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 204 No Content
+< Content-Type: application/json
+< Request-Id: 42b4602a-b7ee-11ed-8054-0242ac120002
+< X-Influxdb-Build: OSS
+< X-Influxdb-Version: 1.8.10
+< X-Request-Id: 42b4602a-b7ee-11ed-8054-0242ac120002
+< Date: Wed, 01 Mar 2023 05:02:26 GMT
+< 
+* Connection #0 to host localhost left intact
+```
+
+```
+mentukov@mentukov-MINIPC-PN50:~/sandbox$ curl http://localhost:8888
+<!DOCTYPE html><html><head><link rel="stylesheet" href="/index.c708214f.css"><meta http-equiv="Content-type" content="text/html; charset=utf-8"><title>Chronograf</title><link rel="icon shortcut" href="/favicon.70d63073.ico"></head><body> <div id="react-root" data-basepath=""></div> <script type="module" src="/index.e81b88ee.js"></script><script src="/index.a6955a67.js" nomodule="" defer></script> </body></html>
+```
+
+```
+mentukov@mentukov-MINIPC-PN50:~/sandbox$ curl -v http://localhost:9092/kapacitor/v1/ping
+*   Trying 127.0.0.1:9092...
+* Connected to localhost (127.0.0.1) port 9092 (#0)
+> GET /kapacitor/v1/ping HTTP/1.1
+> Host: localhost:9092
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 204 No Content
+< Content-Type: application/json; charset=utf-8
+< Request-Id: 115cc886-b7ef-11ed-80b7-0242ac120005
+< X-Kapacitor-Version: 1.6.5
+< Date: Wed, 01 Mar 2023 05:08:13 GMT
+< 
+* Connection #0 to host localhost left intact
+```
+
+
+
 А также скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`). 
 
 P.S.: если при запуске некоторые контейнеры будут падать с ошибкой - проставьте им режим `Z`, например
