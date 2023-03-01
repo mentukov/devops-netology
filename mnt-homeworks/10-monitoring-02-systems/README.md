@@ -174,6 +174,7 @@ mentukov@mentukov-MINIPC-PN50:~/sandbox$ curl -v http://localhost:9092/kapacitor
 * Connection #0 to host localhost left intact
 ```
 
+<img width="1415" alt="Снимок экрана 2023-03-01 в 13 08 42" src="https://user-images.githubusercontent.com/65667114/222050666-9e9cb4ba-78b7-49eb-8627-07e5048e348e.png">
 
 
 А также скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`). 
