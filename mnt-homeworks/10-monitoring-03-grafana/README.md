@@ -102,7 +102,9 @@ node_filesystem_avail_bytes {fstype=~"ext4|xfs"} node_filesystem_size_bytes {fst
 ## Задание 4
 
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
-1. В качестве решения задания приведите листинг этого файла.
+https://github.com/mentukov/devops-netology/blob/main/mnt-homeworks/10-monitoring-03-grafana/grafana.json
+
+2. В качестве решения задания приведите листинг этого файла.
 
 ```
 {
