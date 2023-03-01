@@ -96,6 +96,8 @@ node_filesystem_avail_bytes {fstype=~"ext4|xfs"} node_filesystem_size_bytes {fst
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
+<img width="1191" alt="Снимок экрана 2023-03-01 в 18 38 46" src="https://user-images.githubusercontent.com/65667114/222116076-2d27edb8-2c39-4607-8397-ffa347fff800.png">
+
 
 ## Задание 4
 
