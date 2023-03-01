@@ -31,6 +31,11 @@
 ```
 
 ```
+<img width="1423" alt="Снимок экрана 2023-03-01 в 17 25 51" src="https://user-images.githubusercontent.com/65667114/222099636-0eec0cad-daa1-49da-b964-5d2056618c91.png">
+<img width="519" alt="Снимок экрана 2023-03-01 в 17 26 32" src="https://user-images.githubusercontent.com/65667114/222099704-27fa1b21-89c4-428f-91bb-332e7781ecfd.png">
+<img width="1420" alt="Снимок экрана 2023-03-01 в 17 26 41" src="https://user-images.githubusercontent.com/65667114/222099746-c44871f1-0779-4a96-b7d0-b065c3b7d173.png">
+<img width="1433" alt="Снимок экрана 2023-03-01 в 17 26 03" src="https://user-images.githubusercontent.com/65667114/222099812-2b2c4f90-9646-4b23-a922-0293baaf4e63.png">
+<img width="1358" alt="Снимок экрана 2023-03-01 в 17 27 03" src="https://user-images.githubusercontent.com/65667114/222099890-1099bbc3-e702-4500-951f-5e4ff85cbec9.png">
 
 
 ## Задание 2
