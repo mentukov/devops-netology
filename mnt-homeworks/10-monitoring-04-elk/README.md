@@ -65,16 +65,21 @@ input {
   }
 }
 ```
+<img width="1120" alt="Снимок экрана 2023-03-02 в 16 26 32" src="https://user-images.githubusercontent.com/65667114/222412552-255bb356-b765-4c9b-97c5-872e2d478c4c.png">
+<img width="1407" alt="Снимок экрана 2023-03-02 в 16 24 49" src="https://user-images.githubusercontent.com/65667114/222412612-9ba6d756-4488-4fe7-99c0-534e45791911.png">
 
 ## Задание 2
 
 Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
+<img width="1420" alt="Снимок экрана 2023-03-02 в 16 30 59" src="https://user-images.githubusercontent.com/65667114/222412784-7d2a1627-4349-4628-86c5-55a4a520a407.png">
 
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.
 
 В манифесте директории help также приведенно dummy-приложение, которое генерирует рандомные события в stdout-контейнера.
 Эти логи должны порождать индекс logstash-* в elasticsearch. Если этого индекса нет — воспользуйтесь советами и источниками из раздела «Дополнительные ссылки» этого задания.
- 
+ <img width="1428" alt="Снимок экрана 2023-03-02 в 16 32 14" src="https://user-images.githubusercontent.com/65667114/222412803-1ebf8b85-782d-4905-a5aa-9bd5aae434e5.png">
+<img width="1429" alt="Снимок экрана 2023-03-02 в 16 34 01" src="https://user-images.githubusercontent.com/65667114/222412816-d9ab6fd9-a208-4c9a-a38f-fc6b67765b58.png">
+
 ---
 
 ### Как оформить решение задания
