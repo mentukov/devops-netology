@@ -49,11 +49,61 @@
 
 В качестве ответа пришлите подробные скриншоты по каждому пункту задания:
 
-- файл gitlab-ci.yml;
-- Dockerfile; 
+- файл Dockerfile;
+```
+FROM centos:centos7
+RUN yum -y update;
+#RUN yum install python3 python3-pip
+#COPY requirements.txt requirements.txt
+RUN yum install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel xz-devel wget make
+RUN cd /usr/src; wget https://www.python.org/ftp/python/3.7.11/Python-3.7.11.tgz ; tar xzf Python-3.7.11.tgz; cd Python-3.7.11; \
+    ./configure --enable-optimizations && make altinstall
+RUN /usr/local/bin/python3.7 -m pip install --upgrade pip
+RUN /usr/local/bin/python3.7 -m pip install flask flask-jsonpify flask-restful
+#RUN pip3 install -r requirements.txt
+RUN mkdir /python_api
+COPY python-api.py /python_api/python-api.py
+#CMD ["python3","/python_api/python-api.py"]
+CMD ["python3.7","/python_api/python-api.py"]
+CMD /bin/sh
+```
 - лог успешного выполнения пайплайна;
+
 - решённый Issue.
 
+- gitlab-ci.yml; 
+```
+docker-build:
+  # Use the official docker image.
+  image: docker:latest
+  variables:
+    CI_REGISTRY: registry.gitlab.com
+  stage: build
+  services:
+    - name: "docker:dind"
+      command: ['--tls=false', '--host=tcp://0.0.0.0:2375']
+  before_script:
+    - echo "$CI_REGISTRY_USER" "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  # Default branch leaves tag empty (= latest tag)
+  # All other branches are tagged with the escaped branch name (commit ref slug)
+  script:
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag=""
+        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'latest'"
+      else
+        tag=":$CI_COMMIT_REF_SLUG"
+        echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
+      fi
+    - docker build --pull -t "$CI_REGISTRY_IMAGE${tag}" .
+    - docker push "$CI_REGISTRY_IMAGE${tag}"
+  # Run this job in a branch where a Dockerfile exists
+  rules:
+    - if: $CI_COMMIT_BRANCH
+      exists:
+        - Dockerfile
+```
 ### Важно 
 После выполнения задания выключите и удалите все задействованные ресурсы в Yandex Cloud.
 
