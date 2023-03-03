@@ -20,6 +20,7 @@ Free Cloud account имеет ограничения:
 В качестве решения задания пришлите скриншот меню Projects.
 
 #### Ответ
+<img width="1175" alt="Снимок экрана 2023-03-03 в 15 49 05" src="https://user-images.githubusercontent.com/65667114/222662340-8fd1f95e-18ea-4505-9a4d-1fb9a0ac6865.png">
 
 
 ## Задание 2
@@ -30,6 +31,10 @@ Free Cloud account имеет ограничения:
 4. В качестве решения задание предоставьте скриншот `Stack trace` из этого события и список событий проекта после нажатия `Resolved`.
 
 #### Ответ
+<img width="1172" alt="Снимок экрана 2023-03-03 в 15 50 38" src="https://user-images.githubusercontent.com/65667114/222662617-77be8e5d-817d-4516-92ec-0625d4634ece.png">
+<img width="1425" alt="Снимок экрана 2023-03-03 в 15 19 12" src="https://user-images.githubusercontent.com/65667114/222662668-6594b788-ad73-430f-85b1-f83ff33c4e78.png">
+<img width="1419" alt="Снимок экрана 2023-03-03 в 15 19 02" src="https://user-images.githubusercontent.com/65667114/222662715-efbe6e4e-cced-400e-b44f-6b5dfb83f34e.png">
+
 
 ## Задание 3
 
@@ -44,6 +49,7 @@ Free Cloud account имеет ограничения:
 6. Дополнительно поэкспериментируйте с правилами алёртинга. Выбирайте разные условия отправки и создавайте sample events. 
 
 #### Ответ
+<img width="674" alt="Снимок экрана 2023-03-03 в 15 24 07" src="https://user-images.githubusercontent.com/65667114/222662805-a11715b7-2a3c-4122-b6ca-4338171ff23f.png">
 
 ## Задание повышенной сложности
 
@@ -52,6 +58,8 @@ Free Cloud account имеет ограничения:
 3. В качестве решения задания пришлите скриншот меню issues вашего проекта и пример кода подключения sentry sdk/отсылки событий.
 
 #### Ответ
+<img width="1197" alt="Снимок экрана 2023-03-03 в 15 42 36" src="https://user-images.githubusercontent.com/65667114/222662856-5956bd6d-935e-4e39-9315-e0299c1b375f.png">
+<img width="1419" alt="Снимок экрана 2023-03-03 в 15 43 13" src="https://user-images.githubusercontent.com/65667114/222662895-0aa52ea1-54c3-4ffe-b714-b62fa6f213b8.png">
 
 ---
 
