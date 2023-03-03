@@ -68,8 +68,10 @@ CMD ["python3.7","/python_api/python-api.py"]
 CMD /bin/sh
 ```
 - лог успешного выполнения пайплайна;
+<img width="1427" alt="Снимок экрана 2023-03-03 в 18 18 05" src="https://user-images.githubusercontent.com/65667114/222699059-fdc350bd-049b-4ab2-ac17-54157533de22.png">
 
 - решённый Issue.
+<img width="1424" alt="Снимок экрана 2023-03-03 в 18 18 41" src="https://user-images.githubusercontent.com/65667114/222699035-e018f181-8fb0-4a08-875b-339e5ead4ac4.png">
 
 - gitlab-ci.yml; 
 ```
@@ -104,6 +106,11 @@ docker-build:
       exists:
         - Dockerfile
 ```
+<img width="957" alt="Снимок экрана 2023-03-03 в 18 25 42" src="https://user-images.githubusercontent.com/65667114/222699116-448c986e-8a09-483b-811c-2ef689d9081e.png">
+<img width="596" alt="Снимок экрана 2023-03-03 в 18 25 57" src="https://user-images.githubusercontent.com/65667114/222699170-a0190020-7ffb-4d1e-860b-14c9d7065508.png">
+
+https://gitlab.com/mentuk/restful-api
+
 ### Важно 
 После выполнения задания выключите и удалите все задействованные ресурсы в Yandex Cloud.
 
