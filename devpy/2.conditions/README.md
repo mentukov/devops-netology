@@ -70,6 +70,38 @@ else:
 Рыбы
 ```
 
+#### Ответ
+
+```python
+month = input('Введите месяц: ')
+date = int(input('Введите дату: '))
+
+if month == 'декабрь' and 22 <= date <= 31 or month == 'январь' and 1 <= date <= 19:
+    print('Козерог')
+elif month == 'январь' and 20 <= date <= 31 or month == 'февраль' and 1 <= date <= 18:
+    print('Водолей')
+elif month == 'февраль' and 19 <= date <= 29 or month == 'март' and 1 <= date <= 20:
+    print('Рыбы')
+elif month == 'март' and 21 <= date <= 31 or month == 'апрель' and 1 <= date <= 19:
+    print('Овен')
+elif month == 'апрель' and 20 <= date <= 30 or month == 'май' and 1 <= date <= 20:
+    print('Телец')
+elif month == 'май' and 21 <= date <= 31 or month == 'июнь' and 1 <= date <= 20:
+    print('Близнецы')
+elif month == 'июнь' and 21 <= date <= 30 or month == 'июль' and 1 <= date <= 22:
+    print('Рак')
+elif month == 'июль' and 23 <= date <= 31 or month == 'август' and 1 <= date <= 22:
+    print('Лев')  
+elif month == 'август' and 23 <= date <= 31 or month == 'сентябрь' and 1 <= date <= 22:
+    print('Дева')
+elif month == 'сентябрь' and 23 <= date <= 30 or month == 'октябрь' and 1 <= date <= 22:
+    print('Весы')
+elif month == 'октябрь' and 23 <= date <= 31 or month == 'ноябрь' and 1 <= date <= 21:
+    print('Скорпион')
+elif month == 'ноябрь' and 22 <= date <= 30 or month == 'декабрь' and 1 <= date <= 21:
+    print('Стрелец')
+```
+
 ## Задание №4
 К следующей лекции прочитать про циклы [for](https://foxford.ru/wiki/informatika/tsikl-for-v-python) и
  [while](https://foxford.ru/wiki/informatika/tsikl-while-v-python).
