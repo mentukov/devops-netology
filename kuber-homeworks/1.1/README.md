@@ -139,6 +139,8 @@ clusterrolebinding.rbac.authorization.k8s.io/admin-user created
 mentukov@minik8s:~$ sudo microk8s kubectl -n kube-system describe secret $(sudo microk8s kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
 
 ```
+<img width="1415" alt="Снимок экрана 2023-03-28 в 18 01 26" src="https://user-images.githubusercontent.com/65667114/228206766-3fbad1fc-5e28-4bc0-adc3-96c5d9585532.png">
+<img width="1424" alt="Снимок экрана 2023-03-28 в 18 07 42" src="https://user-images.githubusercontent.com/65667114/228206850-5e5b17e8-3405-4be8-96e8-9d675f1182c8.png">
 
 ------
 
