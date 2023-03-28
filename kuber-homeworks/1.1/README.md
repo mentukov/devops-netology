@@ -67,7 +67,7 @@
 
 ### Ответ
 
-```
+```bash
 mentukov@minik8s:~$ sudo snap install microk8s --classic
 microk8s (1.26/stable) v1.26.1 from Canonical✓ installed
 mentukov@minik8s:~$ sudo usermod -a -G microk8s $USER
