@@ -149,6 +149,80 @@ mentukov@minik8s:~$ sudo microk8s kubectl -n kube-system describe secret $(sudo 
 2. Настроить локально подключение к кластеру.
 3. Подключиться к дашборду с помощью port-forward.
 
+```
+➜  ~    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   138  100   138    0     0    303      0 --:--:-- --:--:-- --:--:--   305
+100 50.7M  100 50.7M    0     0  4229k      0  0:00:12  0:00:12 --:--:-- 5432k
+➜  ~ chmod +x ./kubectl
+➜  ~ sudo mv ./kubectl /usr/local/bin/kubectl
+Password:
+➜  ~ sudo chown root: /usr/local/bin/kubectl
+➜  ~ kubectl version --client
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"26", GitVersion:"v1.26.3", GitCommit:"9e644106593f3f4aa98f8a84b23db5fa378900bd", GitTreeState:"clean", BuildDate:"2023-03-15T13:40:17Z", GoVersion:"go1.19.7", Compiler:"gc", Platform:"darwin/arm64"}
+Kustomize Version: v4.5.7
+
+mentukov@minik8s:~$ microk8s config > kubeconfig.yaml
+
+➜  temp export KUBECONFIG=$(pwd)/kubeconfig.yaml
+➜  temp cat kubeconfig.yml 
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://84.201.143.182:16443
+    insecure-skip-tls-verify: true
+  name: microk8s-cluster
+contexts:
+- context:
+    cluster: microk8s-cluster
+    user: admin
+  name: microk8s
+current-context: microk8s
+kind: Config
+preferences: {}
+users:
+- name: admin
+  user:
+    token: 
+
+➜  temp kubectl get nodes  
+NAME      STATUS   ROLES    AGE   VERSION
+minik8s   Ready    <none>   77m   v1.26.1
+
+mentukov@minik8s:~$ microk8s kubectl create namespace kubernetes-dashboard
+namespace/kubernetes-dashboard created
+mentukov@minik8s:~$ microk8s kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.1/aio/deploy/recommended.yaml -n kubernetes-dashboard
+Warning: resource namespaces/kubernetes-dashboard is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+namespace/kubernetes-dashboard configured
+serviceaccount/kubernetes-dashboard created
+service/kubernetes-dashboard created
+secret/kubernetes-dashboard-certs created
+secret/kubernetes-dashboard-csrf created
+secret/kubernetes-dashboard-key-holder created
+configmap/kubernetes-dashboard-settings created
+role.rbac.authorization.k8s.io/kubernetes-dashboard created
+clusterrole.rbac.authorization.k8s.io/kubernetes-dashboard unchanged
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard configured
+deployment.apps/kubernetes-dashboard created
+service/dashboard-metrics-scraper created
+deployment.apps/dashboard-metrics-scraper created
+mentukov@minik8s:~$ microk8s kubectl rollout status deployment/kubernetes-dashboard -n kubernetes-dashboard
+deployment "kubernetes-dashboard" successfully rolled out
+mentukov@minik8s:~$ nano dashboard-adminuser.yaml
+mentukov@minik8s:~$ microk8s kubectl apply -f dashboard-adminuser.yaml
+serviceaccount/dashboard-adminuser created
+clusterrolebinding.rbac.authorization.k8s.io/dashboard-adminuser created
+
+➜  temp kubectl port-forward -n kubernetes-dashboard svc/kubernetes-dashboard 8443:443
+Forwarding from 127.0.0.1:8443 -> 8443
+Forwarding from [::1]:8443 -> 8443
+Handling connection for 8443
+
+```
+
 ------
 
 ### Правила приёма работы
