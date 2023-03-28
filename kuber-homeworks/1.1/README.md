@@ -223,6 +223,8 @@ Handling connection for 8443
 
 ```
 
+<img width="1433" alt="Снимок экрана 2023-03-28 в 19 18 33" src="https://user-images.githubusercontent.com/65667114/228221398-75de173a-7cdc-4f03-a7b6-5abd0fbacfb6.png">
+
 ------
 
 ### Правила приёма работы
