@@ -22,6 +22,22 @@ Richard и Trisha
 
 **Внимание! Если количество людей в списках будет не совпадать, то мы никого знакомить не будем и выведем пользователю предупреждение, что кто-то может остаться без пары!**
 
+#### Ответ
+
+```python
+boys = ['Peter', 'Alex', 'John', 'Arthur', 'Richard']
+girls = ['Kate', 'Liza', 'Kira', 'Emma', 'Trisha']
+
+boys = sorted(boys)
+girls = sorted (girls)
+
+if len(boys) == len(girls):
+  print('Идеальные пары: ')
+  for name_boy, name_girl in zip(boys, girls):
+    print(f'{name_boy} и {name_girl}')
+else:
+  print('Внимание! Кто-то может остаться без пары!')
+```
 
 ## Задача №2
 Имеется структура данных `cook_book`, в которой хранится информация об ингредиентах блюд и их количестве в расчете на одну порцию:
