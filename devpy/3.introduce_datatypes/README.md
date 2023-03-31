@@ -105,6 +105,19 @@ person = 5
 ```
 **Внимание! Реализация не должна зависеть от количества блюд, их названий и количества ингредиентов в них!**
 
+#### Ответ
+
+```python
+for dish in cook_book:
+  print(dish[0].capitalize() + ':')
+  for ingredient in dish[1]:
+    ingredient_name = ingredient[0]
+    ingredient_quantity = ingredient[1] * person
+    ingredient_measure = ingredient[2]
+    print(f'{ingredient_name}, {ingredient_quantity}{ingredient_measure}')
+  print()
+```
+
 ## Задание №3
 К следующей лекции прочитать про [типы данных](https://habr.com/ru/post/319164/).
 
