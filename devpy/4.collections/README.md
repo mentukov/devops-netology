@@ -18,6 +18,14 @@ geo_logs = [
     {'visit10': ['Архангельск', 'Россия']}
 ]
 ```
+#### Ответ
+
+```python
+for place in geo_logs:
+  for city, country in place.items():
+    if country[1] == 'Россия':
+      print(place)
+```
 
 ## Задание 2  
 Выведите на экран все уникальные гео-ID из значений словаря ids.   
