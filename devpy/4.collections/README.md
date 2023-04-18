@@ -39,10 +39,12 @@ ids = {'user1': [213, 213, 213, 15, 213],
 #### Ответ
 
 ```python
-set_1 = set(ids['user1'])
-set_2 = set(ids['user2'])
-set_3 = set(ids['user3'])
-print(list(set_3 | set_2 | set_1))
+unique_ids = set()
+
+for user_ids in ids.values():
+  unique_ids.update(user_ids)
+  
+print(list(unique_ids))
 ```
 
 ## Задание 3  
