@@ -62,6 +62,24 @@ queries = [
     ]
 ```
 
+#### Ответ
+
+```python
+word_count = {}
+
+for query in queries:
+    words = query.split()
+    count = len(words)
+    if count in word_count:
+        word_count[count] += 1
+    else:
+        word_count[count] = 1
+
+for count, num_queries in word_count.items():
+  percentage = (num_queries * 100) / 7
+  print(f"{count} слова: {percentage} % запросов")
+```
+
 ## Задание 4  
 Дана статистика рекламных каналов по объемам продаж.  
 Напишите скрипт, который возвращает название канала с максимальным объемом.  
