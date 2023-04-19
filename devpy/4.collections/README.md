@@ -106,7 +106,18 @@ print(max_channel)
 *Напишите код для преобразования произвольного списка вида ```['2018-01-01', 'yandex', 'cpc', 100]``` (он может быть любой длины) в словарь
 ```{'2018-01-01': {'yandex': {'cpc': 100}}}```
 
+#### Ответ
 
+```python
+my_list = ['2018-01-01', 'yandex', 'cpc', 100]
+
+result_dict = {my_list[-2]: my_list[-1]}
+
+for item in reversed(my_list[:-2]):
+    result_dict = {item: result_dict}
+
+print(result_dict)
+```
 
 Для подготовки к следующей лекции прочитайте про [функции](https://foxford.ru/wiki/informatika/funktsii-v-python)
 
