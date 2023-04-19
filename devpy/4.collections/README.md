@@ -88,6 +88,20 @@ for count, num_queries in word_count.items():
 stats = {'facebook': 55, 'yandex': 120, 'vk': 115, 'google': 99, 'email': 42, 'ok': 98}
 ```
 
+#### Ответ
+
+```python
+max_count = 0
+max_channel = ''
+
+for key, value in stats.items():
+  if value > max_count:
+    max_count = value
+    max_channel = key
+
+print(max_channel)
+```
+
 ## Задание 5  
 *Напишите код для преобразования произвольного списка вида ```['2018-01-01', 'yandex', 'cpc', 100]``` (он может быть любой длины) в словарь
 ```{'2018-01-01': {'yandex': {'cpc': 100}}}```
