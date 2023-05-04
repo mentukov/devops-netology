@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: netology
+  name: netology-web
+spec:
+  containers:
+  - name: netology-web
+    image: gcr.io/kubernetes-e2e-test-images/echoserver:2.2
