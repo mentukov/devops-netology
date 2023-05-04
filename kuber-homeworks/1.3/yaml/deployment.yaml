@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: nginx-multitool
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: nginx-multitool
   template:
     metadata:
       labels:
-        app: my-app
+        app: nginx-multitool
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
-      - name: multitool
-        image: praqma/network-multitool
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+        - name: multitool
+          image: praqma/network-multitool
+          command: ["/bin/sh", "-c", "while true; do sleep 3600; done"]
