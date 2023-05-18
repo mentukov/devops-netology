@@ -69,6 +69,40 @@ WBITT Network MultiTool (with NGINX) - backend-deployment-8494f9f8bd-9bgwc - 10.
 ### Ответ
 
 ```
+01:00:35 mentukov@mentukov-MINIPC-PN50 1.5 ±|main|→ microk8s enable ingress
+Infer repository core for addon ingress
+Addon core/ingress is already enabled
+01:03:53 mentukov@mentukov-MINIPC-PN50 yaml2 ±|main|→ kubectl apply -f ingress.yaml
+ingress.networking.k8s.io/my-ingress created
+01:04:08 mentukov@mentukov-MINIPC-PN50 yaml2 ±|main|→ microk8s kubectl get ingress
+NAME         CLASS    HOSTS   ADDRESS     PORTS   AGE
+my-ingress   public   *       127.0.0.1   80      11s
+➜  ~ curl 172.20.10.7:80
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+➜  ~ curl 172.20.10.7/api
+WBITT Network MultiTool (with NGINX) - backend-deployment-8494f9f8bd-9bgwc - 10.1.8.207 - HTTP: 8080 , HTTPS: 443 . (Formerly praqma/network-multitool)
 
 ```
 
