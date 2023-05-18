@@ -105,5 +105,6 @@ Commercial support is available at
 WBITT Network MultiTool (with NGINX) - backend-deployment-8494f9f8bd-9bgwc - 10.1.8.207 - HTTP: 8080 , HTTPS: 443 . (Formerly praqma/network-multitool)
 
 ```
+<img width="1173" alt="Снимок экрана 2023-05-18 в 18 06 43" src="https://github.com/mentukov/devops-netology/assets/65667114/59676937-187c-4501-9de4-77858675b7d5">
 
 ------
