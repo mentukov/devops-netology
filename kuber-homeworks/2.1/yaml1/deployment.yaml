@@ -13,26 +13,16 @@ spec:
         app: data-exchange-app
     spec:
       containers:
+
         - name: busybox-container
           image: busybox
           command: ['sh', '-c', 'while true; do echo $(date) >> /shared-data/data.txt; sleep 5; done']
           volumeMounts:
             - name: shared-volume
               mountPath: /shared-data
+
         - name: network-multitool
           image: wbitt/network-multitool
-          env:
-           - name: HTTP_PORT
-             value: "80"
-           - name: HTTPS_PORT
-             value: "443"
-          ports:
-           - containerPort: 80
-             name: http-port
-           - containerPort: 443
-             name: https-port
-          args:
-            - tail -f /shared-data/data.txt
           volumeMounts:
             - name: shared-volume
               mountPath: /shared-data
