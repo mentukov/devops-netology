@@ -22,16 +22,16 @@ spec:
         - name: network-multitool
           image: wbitt/network-multitool
           env:
-          - name: HTTP_PORT
-            value: "80"
-          - name: HTTPS_PORT
-            value: "443"
+           - name: HTTP_PORT
+             value: "80"
+           - name: HTTPS_PORT
+             value: "443"
           ports:
-          - containerPort: 80
-            name: http-port
-          - containerPort: 443
-            name: https-port
-           args:
+           - containerPort: 80
+             name: http-port
+           - containerPort: 443
+             name: https-port
+          args:
             - tail -f /shared-data/data.txt
           volumeMounts:
             - name: shared-volume
