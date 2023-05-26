@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: multitool-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: multitool
+  template:
+    metadata:
+      labels:
+        app: multitool
+    spec:
+      containers:
+      - name: multitool
+        image: debian
+        command: ["/bin/sh", "-c", "tail -f /var/log/syslog"]
+        volumeMounts:
+        - name: host-logs
+          mountPath: /var/log
+          readOnly: true
+      volumes:
+      - name: host-logs
+        hostPath:
+          path: /var/log
