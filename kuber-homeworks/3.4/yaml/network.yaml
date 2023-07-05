@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-svc
+spec:
+  ports:
+    - name: nginx
+      port: 7001
+      targetPort: 80
+    - name: multitool
+      port: 7002
+      targetPort: 8080
+  selector:
+    app: my-app
