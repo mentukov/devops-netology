@@ -42,11 +42,11 @@
 ### UPD
 
 Для минимальной отказоустойчивости необходим кворум (2+1)
-т е control node -3
-worker node -3
+- control node -3
+- worker node -3
 характеристики control node:
-2 cpu 2 ram X 3
+- 2 cpu 2 ram X 3
 характеристики worker node (ресурсы увеличил на случай отказа ноды или апдейтов):
-20 cpu 32 ram X 3
+- 20 cpu 32 ram X 3
 
 ----
