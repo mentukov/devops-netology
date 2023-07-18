@@ -109,8 +109,11 @@ Commercial support is available at
 </html>
 
 ```
+Меняем в конфиге имя с auth-db на auth-db.data.svc.cluster.local
 
 ![Снимок экрана 2023-07-18 в 13 28 51](https://github.com/mentukov/devops-netology/assets/65667114/828cd470-ffe3-437d-98a9-7b1ab9ad9c8e)
+
+перезапускаем deployments
 
 ![Снимок экрана 2023-07-18 в 13 29 08](https://github.com/mentukov/devops-netology/assets/65667114/e5df6523-28f4-4634-a48f-4a0f33ba8c0c)
 
