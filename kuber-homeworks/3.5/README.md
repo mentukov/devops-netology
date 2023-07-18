@@ -112,6 +112,7 @@ Commercial support is available at
 
 
 
+
 ```shell
 kuber@master:~$ kubectl logs -n web pod/web-consumer-86d8bc498f-fbc7k
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
