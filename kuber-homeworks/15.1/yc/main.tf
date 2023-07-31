@@ -82,7 +82,17 @@ resource "yandex_compute_instance" "private-vm" {
     nat       = false
   }
 
+variable "encrypted_password" {
+  description = "Encrypted password for the user 'ubuntu'"
+}
+
   metadata = {
-    ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
+    user_data = <<-EOT
+      #cloud-config
+      users:
+        - name: ubuntu
+          passwd: "${var.encrypted_password}"
+          shell: /bin/bash
+    EOT
   }
 }
