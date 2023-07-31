@@ -343,8 +343,11 @@ internal_ip_address_public_vm = "192.168.10.10"
 
 ```
 
+![Снимок экрана 2023-07-31 в 15 58 37](https://github.com/mentukov/devops-netology/assets/65667114/9e663cb2-10ec-4940-8530-addf645bf21d)
 
+![Снимок экрана 2023-07-31 в 15 59 43](https://github.com/mentukov/devops-netology/assets/65667114/1189bd74-4f48-43bd-bbb2-8fe3a87f1e01)
 
+![Снимок экрана 2023-07-31 в 16 00 26](https://github.com/mentukov/devops-netology/assets/65667114/ee55c10e-28d5-45c3-8f9c-fec1a9df8d91)
 
 ```
 
