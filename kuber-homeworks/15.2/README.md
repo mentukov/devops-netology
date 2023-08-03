@@ -68,7 +68,7 @@ Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 
 ```
 
-http://mentukov-netology-bucket.storage.yandexcloud.net/Lenna.jpg
+https://mentukov-netology-bucket-test.storage.yandexcloud.net/Lenna.jpg
 
 ```shell
 ➜  yc git:(main) ✗ terraform apply
