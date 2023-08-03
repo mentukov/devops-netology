@@ -67,6 +67,7 @@ yandex_storage_object.Lenna_object: Creation complete after 2s [id=Lenna.jpg]
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 
 ```
+![Снимок экрана 2023-08-03 в 13 21 08](https://github.com/mentukov/devops-netology/assets/65667114/d2f730a3-c0bc-4d60-a9fb-c69715409dc9)
 
 https://mentukov-netology-bucket-test.storage.yandexcloud.net/Lenna.jpg
 
@@ -96,5 +97,8 @@ instance-2-ip = "192.168.10.10"
 test-image-url = "https://mentukov-netology-bucket-test.storage.yandexcloud.net/Lenna.jpg"
 
 ```
+![Снимок экрана 2023-08-03 в 14 53 35](https://github.com/mentukov/devops-netology/assets/65667114/fd43244f-07b7-42ae-bf98-ba87446bf93f)
+![Снимок экрана 2023-08-03 в 14 54 52](https://github.com/mentukov/devops-netology/assets/65667114/cee6103f-d1cb-46ca-bd37-64746e2e5317)
+![Снимок экрана 2023-08-03 в 14 51 11](https://github.com/mentukov/devops-netology/assets/65667114/7b78702d-38f7-4074-bcf9-6f4eb056fe76)
 
 ---
