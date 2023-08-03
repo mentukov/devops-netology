@@ -342,8 +342,13 @@ internal_ip_address_private_vm = "192.168.20.15"
 internal_ip_address_public_vm = "192.168.10.20"
 
 ```
+![Снимок экрана 2023-08-03 в 11 38 02](https://github.com/mentukov/devops-netology/assets/65667114/a0f16040-e617-4a26-a8e4-bb46bd3c42c1)
 
+![Снимок экрана 2023-08-03 в 11 39 12](https://github.com/mentukov/devops-netology/assets/65667114/392aca49-ec99-452b-9e44-5f805cb82d56)
 
+![Снимок экрана 2023-08-03 в 11 39 27](https://github.com/mentukov/devops-netology/assets/65667114/949a59cc-36e9-4b2c-a088-587b27b96876)
+
+![Снимок экрана 2023-08-03 в 11 39 37](https://github.com/mentukov/devops-netology/assets/65667114/e3ac73c6-70c8-4145-aba7-44ae824ea363)
 
 ```shell
 ➜  yc git:(main) ✗ ssh ubuntu@158.160.102.239
