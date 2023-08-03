@@ -334,22 +334,100 @@ Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-external_ip_address_nat_vm = "158.160.119.52"
+external_ip_address_nat_vm = "158.160.102.230"
 external_ip_address_private_vm = ""
-external_ip_address_public_vm = "158.160.49.225"
+external_ip_address_public_vm = "158.160.102.239"
 internal_ip_address_nat_vm = "192.168.10.254"
-internal_ip_address_private_vm = "192.168.20.25"
-internal_ip_address_public_vm = "192.168.10.10"
+internal_ip_address_private_vm = "192.168.20.15"
+internal_ip_address_public_vm = "192.168.10.20"
 
 ```
 
-![Снимок экрана 2023-07-31 в 15 58 37](https://github.com/mentukov/devops-netology/assets/65667114/9e663cb2-10ec-4940-8530-addf645bf21d)
 
-![Снимок экрана 2023-07-31 в 15 59 43](https://github.com/mentukov/devops-netology/assets/65667114/1189bd74-4f48-43bd-bbb2-8fe3a87f1e01)
 
-![Снимок экрана 2023-07-31 в 16 00 26](https://github.com/mentukov/devops-netology/assets/65667114/ee55c10e-28d5-45c3-8f9c-fec1a9df8d91)
+```shell
+➜  yc git:(main) ✗ ssh ubuntu@158.160.102.239
+The authenticity of host '158.160.102.239 (158.160.102.239)' can't be established.
+ECDSA key fingerprint is SHA256:np5troWqJdDJr+bEV6uvGWg0n/yDKT9AqD6ll3bVwN0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '158.160.102.239' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-155-generic x86_64)
 
-```
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@instance-public-vm:~$ curl icanhazip.com
+158.160.102.239
+ubuntu@instance-public-vm:~$ ping ya.ru
+PING ya.ru (77.88.55.242) 56(84) bytes of data.
+64 bytes from ya.ru (77.88.55.242): icmp_seq=1 ttl=56 time=11.4 ms
+64 bytes from ya.ru (77.88.55.242): icmp_seq=2 ttl=56 time=5.57 ms
+64 bytes from ya.ru (77.88.55.242): icmp_seq=3 ttl=56 time=13.0 ms
+^C
+--- ya.ru ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 5.567/9.981/12.978/3.187 ms
+
+➜  yc git:(main) ✗ ssh -J ubuntu@158.160.102.239 ubuntu@192.168.20.15
+The authenticity of host '192.168.20.15 (<no hostip for proxy command>)' can't be established.
+ECDSA key fingerprint is SHA256:Yowu3G06b3ASeLPcDCuUkta8mMNuCGxnomQuLxNwDPs.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.20.15' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-155-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@instance-private-vm:~$ curl icanhazip.com
+158.160.102.230
+ubuntu@instance-private-vm:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether d0:0d:19:06:c5:d9 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.15/24 brd 192.168.20.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::d20d:19ff:fe06:c5d9/64 scope link 
+       valid_lft forever preferred_lft forever
+ubuntu@instance-private-vm:~$ ping ya.ru
+PING ya.ru (77.88.55.242) 56(84) bytes of data.
+64 bytes from ya.ru (77.88.55.242): icmp_seq=1 ttl=52 time=5.07 ms
+64 bytes from ya.ru (77.88.55.242): icmp_seq=2 ttl=52 time=4.03 ms
+64 bytes from ya.ru (77.88.55.242): icmp_seq=3 ttl=52 time=3.98 ms
+^C
+--- ya.ru ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 3.978/4.358/5.072/0.505 ms
+
+➜  yc git:(main) ✗ terraform destroy -auto-approve  
+
+Destroy complete! Resources: 7 destroyed.
 
 ```
 
